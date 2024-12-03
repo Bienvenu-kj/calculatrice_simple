@@ -1,4 +1,3 @@
-"use strict";
 // ceci est une calculatrice faite en typeScript, conjoitement avec tailwindcss
 // selection des éléments d'affichage
 let displayCharacter = document.querySelector('#displayCharacter');
