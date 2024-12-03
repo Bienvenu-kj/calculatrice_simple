@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice</title>
+    <link rel="stylesheet" href="outpouts.css" type='text/css'>
+    <style>
+        #Calculatrice {
+            box-shadow : 0.1px 0.1px 4px rgba(59, 130, 246,0.5);
+            border-radius : 3px;
+        }
+        .bouton{
+            display: flex;
+            justify-content: center;
+            align-items : center;
+        }
+        .bouton:nth-child(19){
+            grid-column : 4;
+            grid-row : 4/6;
+        }
+        #bottom::before{
+            content : "";
+            position : absolute;
+            width : 35px;
+            height : 4px;
+            background-color: rgba(55, 65, 81,1);
+            top: -10px;
+            left : 50%;
+            z-index : 100;
+            transform: translateX(-50%);
+        }
+        #displays{
+            letter-spacing: 2.5px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900">
+    <div classs="" id="header">
+        <h1 class="text-center text-3xl font-bold text-blue-500">Calculatrice Simple</h1>
+    </div>
+    <div class="h-[85vh] my-8 w-[70%] max-w-full m-auto" id="Calculatrice">
+        <div class="h-full flex flex-col" id="main">
+            <div class="p-4 overflow-x-hidden justify-between items-end h-[50%] flex flex-col" id="top">
+                <div class="gap-x-4 flex">
+                    <div class="self-end">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" 
+                        stroke-linejoin="round" class="lucide lucide-radical"><path d="M3 12h3.28a1 1 0 0 1 .948.684l2.298 7.934a.5.5 0 0 0 .96-.044L13.82 4.771A1 1 0 0 1 14.792 4H21"/></svg>
+                    </div>
+                    <div class="self-end">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-dollar-sign"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
+                    </div>
+                </div>
+                <div class="w-full overflow-x-hidden flex flex-col" id="displays">
+                    <div id="displayCharacter" class="text-end text-2xl font-bold text-white"></div>
+                    <div id="displayResult" class="text-end text-lg font-bold my-4 text-gray-500"></div>
+                </div>
+            </div>
+            <div class="relative bg-gray-800 h-[50%]" id="bottom">
+                <div class="hidden" id="scientific"></div>
+                <div class="h-full gap-4 p-4 grid grid-cols-4 grid-rows-5" id="normal">
+                    <div class="bouton  text-blue-500" onclick="deleteAll() ; charBgChange()" id="deleteAll">C</div>
+                    <div class="bouton  text-blue-500" onclick="ajouterCaractère('/') ; charBgChange()">
+                        <?xml version="1.0" encoding="iso-8859-1"?>
+                        <!-- Generator: Adobe Illustrator 18.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                        <svg class="h-[24px] w-[24px]" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             viewBox="0 0 16.5 16.5" style="enable-background:new 0 0 16.5 16.5;" xml:space="preserve">
+                        <g>
+                            <circle style="fill:#3b82f6" cx="8.25" cy="2.25" r="2.25"/>
+                            <circle style="fill:#3b82f6;" cx="8.25" cy="14.25" r="2.25"/>
+                            <path style="fill:#3b82f6;" d="M14.25,6.25h-12c-1.104,0-2,0.896-2,2s0.896,2,2,2h12c1.104,0,2-0.896,2-2S15.354,6.25,14.25,6.25z"/>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        </svg>
+                        </div>
+                    <div class="bouton  text-blue-500" onclick="ajouterCaractère('*');charBgChange();">
+                        <?xml version="1.0" ?>
+                        <svg class="h-[24px] w-[24px]" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
+                            .st0{fill:#3b82f6}
+                        </style><path class="st0" d="M284.3,245.1l110.9-110.9c7.8-7.8,7.8-20.5,0-28.3s-20.5-7.8-28.3,0L256,216.8L145.1,105.9  c-7.8-7.8-20.5-7.8-28.3,0s-7.8,20.5,0,28.3l110.9,110.9L116.9,355.9c-7.8,7.8-7.8,20.5,0,28.3c3.9,3.9,9,5.9,14.1,5.9  c5.1,0,10.2-2,14.1-5.9L256,273.3l110.9,110.9c3.9,3.9,9,5.9,14.1,5.9s10.2-2,14.1-5.9c7.8-7.8,7.8-20.5,0-28.3L284.3,245.1z"/></svg>
+                    </div>
+                    <div class="bouton  text-blue-500" onclick="deleteCharacter(); charBgChange();" id="deleteChar">
+                        <svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="2"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+>
+  <path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z" />
+  <line x1="18" y1="9" x2="12" y2="15" />
+  <line x1="12" y1="9" x2="18" y2="15" />
+</svg>
+
+                    </div>
+                    <div class="bouton font-bold text-white text-xl" onclick="ajouterCaractère('7') ; charBgChange();">7</div>
+                    <div class="bouton font-bold text-white text-xl" onclick="ajouterCaractère('8') ; charBgChange();">8</div>
+                    <div class="bouton font-bold text-white text-xl" onclick="ajouterCaractère('9') ; charBgChange();">9</div>
+                    <div class="bouton   text-blue-500" onclick="ajouterCaractère('-') ; charBgChange()"><?xml version="1.0" encoding="iso-8859-1"?>
+                        <!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                        <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+                        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                             width="24px" height="24px" viewBox="0 0 612 612" style="enable-background:new 0 0 612 612; fill:#3b82f6" xml:space="preserve">
+                        <g>
+                            <g id="minus">
+                                <g>
+                                    <path d="M554.625,248.625H57.375C25.685,248.625,0,274.31,0,306c0,31.69,25.685,57.375,57.375,57.375h497.25
+                                        C586.315,363.375,612,337.69,612,306C612,274.31,586.315,248.625,554.625,248.625z"/>
+                                </g>
+                            </g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        <g>
+                        </g>
+                        </svg>
+                        </div>
+                    <div class="bouton font-bold text-white text-xl" onclick="ajouterCaractère('4') ; charBgChange();">4</div>
+                    <div class="bouton font-bold text-white text-xl" onclick="ajouterCaractère('5') ; charBgChange();">5</div>
+                    <div class="bouton font-bold text-white text-xl" onclick="ajouterCaractère('6') ; charBgChange();">6</div>
+                    <div class="bouton font-bold  text-xl text-blue-500" onclick="ajouterCaractère('+') ; charBgChange();"><?xml version="1.0" ?><svg class="size-6" id="Layer_1" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><style type="text/css">
+                        .st0{fill:#3b82f6;}
+                    </style>
+                    <path class="st0" d="M381,236H276V131c0-11-9-20-20-20s-20,9-20,20v105H131c-11,0-20,9-20,20s9,20,20,20h105v105c0,11,9,20,20,20  s20-9,20-20V276h105c11,0,20-9,20-20S392,236,381,236z"/>
+                    </svg></div>
+                    <div class="bouton font-bold text-white text-xl" onclick="ajouterCaractère('1') ; charBgChange();">1</div>
+                    <div class="bouton font-bold text-white text-xl" onclick="ajouterCaractère('2') ; charBgChange();">2</div>
+                    <div class="bouton font-bold text-white text-xl" onclick="ajouterCaractère('3') ; charBgChange();">3</div>
+                    <div class="bouton font-bold text-white text-xl" onclick="ajouterCaractère('%') ; charBgChange();">%</div>
+                    <div class="bouton font-bold text-white text-xl" onclick="ajouterCaractère('0') ; charBgChange();">0</div>
+                    <div class="bouton font-bold text-white text-xl" onclick="ajouterCaractère(',') ; charBgChange();">,</div>
+                    <div class="bouton rounded-xl font-bold text-white bg-blue-700" onclick="result();ResultBgChang();"id="result">
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class='' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-equal" width="24" height="24" viewBox="0 0 24 24"><path style="fill:white" d="M19,10H5V8H19V10M19,16H5V14H19V16Z" /></svg>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="calculatrice.js"></script>
+</body>
+</html>
