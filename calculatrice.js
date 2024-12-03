@@ -11,8 +11,8 @@ function ajouterCaractère(character) {
 }
 function result() {
     try {
-    
-        let resultOper = eval(displayCharacter.textContent).replace(/\s+/g, '');
+        let charWithSp = displayCharacter.textContent.replace(/\s+/g, '');
+        let resultOper = eval(charWithSp);
         return displayResult.textContent = resultOper;
     }
     catch (_a) {
