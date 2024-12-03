@@ -12,8 +12,8 @@ function ajouterCaractère(character) {
 }
 function result() {
     try {
-        let resultOper = eval(displayCharacter.textContent.replace(/\s+/g, "");
-        displayResult.textContent = resultOper;
+        let sans_espace = displayCharacter.textContent.replace(/\s+/g, "")
+        let resultOper = eval(sans_espace)
     }
     catch (_a) {
         displayResult.textContent = "Error";
