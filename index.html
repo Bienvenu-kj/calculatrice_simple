@@ -6,7 +6,20 @@
     <title>Calculatrice</title>
     <link rel="stylesheet" href="outpouts.css" type='text/css'>
     <style>
+.information_orientation{
+padding : 2rem;
+z-index : 300;
+color : white;
+position : absolue;
+top: 50%;
+left : 50%;
+transform : translate(-50%, -50);
+background : rgba(59, 130, 246,0.5);
+border : 1px solid rgba(55, 65, 81,1);
+}
 body{
+position : relative;
+display : none;
 height : 100vh;
 }
 
@@ -46,6 +59,10 @@ height : 100vh;
     </style>
 </head>
 <body class="bg-gray-900">
+ <div classs="information_orientation" id="information_orientation">
+Pour une meilleure expérience, utilisez le mode portrait !"
+    </div>
+
     <div classs="" id="header">
         <h1 class="text-center text-3xl font-bold text-blue-500">Calculatrice Simple</h1>
     </div>
