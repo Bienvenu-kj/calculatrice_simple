@@ -12,7 +12,7 @@ function ajouterCaractère(character) {
 }
 function result() {
     try {
-        let resultOper = eval(displayCharacter.textContent);
+        let resultOper = eval(displayCharacter.textContent.replace(/\s+/g, "");
         displayResult.textContent = resultOper;
     }
     catch (_a) {
