@@ -8,13 +8,6 @@ let buttons = document.querySelectorAll('.bouton');
 // let deleteAllButton = document.querySelector('#deleteAll');
 // let resultbutton = document.querySelector('#result');
 
-window.addEventListener("orientationchange", () => {
-    if (window.orientation === 90 || window.orientation === -90) {
-     information_orientation.style.display='block';
-body.style.backgroundColor = "black";
-    }
-});
-
 function ajouterCaractère(character) {
     return displayCharacter.innerHTML += character;
 }
